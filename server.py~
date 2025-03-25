@@ -24,7 +24,7 @@ def handle_request(req):
 
     if 'GET' in headers[0]:
         with open('./index.html', 'r') as file:
-            content = file.read()
+            content = file.readlines()
             return 'HTTP/1.1 200 OK\n\n' + content
     elif 'POST' in headers[0]:
         return 'HTTP/1.1 200 OK\n\nPOST request received.'
